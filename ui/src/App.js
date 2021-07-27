@@ -8,9 +8,11 @@ function App() {
   return (
     <div>
       <div>
+        {/* Nav bar will start here to show the headings*/}
         <Navbar />
       </div>
       <div className="app">
+        {/* form component to fill the user details */}
         <Form />
       </div>
     </div>

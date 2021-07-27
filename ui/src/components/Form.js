@@ -3,13 +3,18 @@ import DataGrid from "../components/DataGrid";
 
 import "./Form.scss";
 const Form = () => {
+  // values are initialised first
   const intialValues = { gre: "", gpa: "", country: "", course: "" };
-
+  // form values are stored here
   const [formValues, setFormValues] = useState(intialValues);
+  // errors will be stored here
   const [formErrors, setFormErrors] = useState({});
+  // it will return boolean value
   const [isSubmitting, setIsSubmitting] = useState(false);
+  // api response will store here
   const [courseList, setCourseList] = useState("");
 
+  // submit the details after proper validation
   const submit = () => {
     console.log(formValues.gre);
     let gre = formValues.gre;
@@ -19,6 +24,7 @@ const Form = () => {
     if (course) {
       course = course.toLocaleLowerCase();
     }
+    // getting data from server with api call
     const URL = `http://127.0.0.1:9000/getSearchList?gpa=${gpa}&gre_score=${gre}&country=${country}&course=${course}`;
     fetch(URL)
       .then((data) => {
@@ -29,20 +35,20 @@ const Form = () => {
       });
   };
 
-  //input change handler
+  //input change handler is reponsible for get the vales
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
   };
 
-  //form submission handler
+  //form submission handler will check errors
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
     setIsSubmitting(true);
   };
 
-  //form validation handler
+  //form validation handler for empty values
   const validate = (values) => {
     let errors = {};
 
@@ -59,6 +65,7 @@ const Form = () => {
     return errors;
   };
 
+  // Checking the errors and submiting the form after proper validation
   useEffect(() => {
     if (Object.keys(formErrors).length === 0 && isSubmitting) {
       submit();

@@ -13,7 +13,7 @@ app.use(function (req, res, next) {
   }
   next();
 });
-
+// Creating a database connection with postgres using the module Knex
 const db = require("knex")({
   client: "pg",
   connection: {
@@ -27,6 +27,7 @@ app.set("db", db);
 
 app.use("/", indexRouter);
 
+// Node application will run on this port
 app.listen(9000, () => {
   console.log(`Server listening at http://localhost:9000`);
 });
