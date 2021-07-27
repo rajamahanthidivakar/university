@@ -14,7 +14,8 @@ router.route("/getSearchList").get(function (req, res, next) {
   const gpa = req.query.gpa;
   const greScore = req.query.gre_score;
   const country = req.query.country;
-  UsersService.getSearchData(db, gpa, greScore, country).then((data) => {
+  const course = req.query.course;
+  UsersService.getSearchData(db, gpa, greScore, country,course).then((data) => {
     res.send(data['rows']);
     console.log(data['rows']);
   });

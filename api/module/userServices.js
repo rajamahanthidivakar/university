@@ -8,12 +8,6 @@ const UsersService = {
       query += ` and courses.name LIKE '%${course}%'`;
     }
     return db.raw(query);
-    //   .select("id",db.ref('name').as('university_name'))
-    //   .from("universities")
-    //   .where("country", country)
-    //   .andWhere("minimum_gpa", ">=", gpa)
-    //   .andWhere("minimum_gre", ">=", greScore);
-    // return db.select("name").from("courses").whereIn("university_id", subQuery);
   },
 };
 
