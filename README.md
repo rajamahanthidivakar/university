@@ -31,9 +31,9 @@ copy command to import tabledata from file which i have shared in the email:
 
 Step2: Open main folder university\
 Step3: Open ui folder in separate terminal or command prompt\
-Step4: run command in ui terminal ====>npm install\
-Step5: run command in ui ====>npm start (it will launch on 3000 port)\
+Step4: run command in ui terminal - npm install\
+Step5: run command in ui - npm start (it will launch on 3000 port)\
 Step5: Open api folder in separate terminal or command prompt\
-Step6: run command in api terminal====>npm install\
-Step7: run command in api terminal====>node index.js  (it will launch on 9000 port)
+Step6: run command in api terminal - npm install\
+Step7: run command in api terminal - node index.js  (it will launch on 9000 port)
 
