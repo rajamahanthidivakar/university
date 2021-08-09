@@ -16,10 +16,16 @@ router.route("/getSearchList").get(function (req, res, next) {
   const greScore = req.query.gre_score;
   const country = req.query.country;
   const course = req.query.course;
+  if (
+    (!gpa && !gpa.trim()) ||
+    (!greScore && !greScore.trim()) ||
+    (!country && !country.trim())
+  ) {
+    return res.status(400).send("Invalid request!");
+  }
   UsersService.getSearchData(db, gpa, greScore, country, course).then(
     (data) => {
       res.send(data["rows"]);
-      console.log(data["rows"]);
     }
   );
 });

@@ -4,7 +4,7 @@
   "description": "get the college names on search",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test --recursive --exit --no-timeout"
   },
   "author": "divakar",
   "license": "ISC",
@@ -15,5 +15,10 @@
     "nodemon": "^2.0.12",
     "pg": "^8.6.0",
     "postgres": "^1.0.2"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
+    "mocha": "^9.0.3"
   }
 }

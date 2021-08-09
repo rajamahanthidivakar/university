@@ -37,3 +37,10 @@ Step5: Open api folder in separate terminal or command prompt\
 Step6: run command in api terminal - npm install\
 Step7: run command in api terminal - node index.js  (it will launch on 9000 port)
 
+To run the tests cases please use the following commands:
+===========================================================
+
+Step1: go to api folder\
+Step2: run command - npm run test\
+Step3: It will validate the api query params.
+
